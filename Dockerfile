@@ -28,6 +28,9 @@ COPY build.sh ${FIREBIRD_PATH}
 RUN cd ${FIREBIRD_PATH} && mkdir DBA && chown firebird:firebird DBA && chmod -R 770 DBA
 RUN cd / && mkdir dba && chown firebird:firebird dba && chmod -R 770 dba
 
+COPY firebird.conf ${FIREBIRD_PATH} 
+COPY security2.fdb ${FIREBIRD_PATH}
+
 EXPOSE 3050/tcp
 EXPOSE 3051/tcp
 EXPOSE 3052/tcp
