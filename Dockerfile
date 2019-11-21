@@ -19,7 +19,7 @@ RUN rm FirebirdCS-2.1.7.18553-0.amd64/scripts/postinstall.sh
 #COPY install.sh FirebirdCS-2.1.7.18553-0.amd64
 #COPY postinstall.sh FirebirdCS-2.1.7.18553-0.amd64/scripts
 
-RUN cd FirebirdCS-2.1.7.18553-0.amd64 && ./install.sh ${FIREBIRD_DB_PASSWORD_DEFAULT}
+#RUN cd FirebirdCS-2.1.7.18553-0.amd64 && ./install.sh ${FIREBIRD_DB_PASSWORD_DEFAULT}
 RUN rm -r FirebirdCS-2.1.7.18553-0.amd64
 
 COPY firebird.conf ${FIREBIRD_PATH} 
