@@ -27,6 +27,10 @@ COPY build.sh ${FIREBIRD_PATH}
 
 RUN cd ${FIREBIRD_PATH} && mkdir DBA && chown firebird:firebird DBA && chmod -R 770 DBA
 RUN cd / && mkdir dba && chown firebird:firebird dba && chmod -R 770 dba
+
 EXPOSE 3050/tcp
+EXPOSE 3051/tcp
+EXPOSE 3052/tcp
+
 WORKDIR ${FIREBIRD_PATH}
 ENTRYPOINT ${FIREBIRD_PATH}/build.sh 
