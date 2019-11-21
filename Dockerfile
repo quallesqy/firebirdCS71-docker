@@ -23,7 +23,7 @@ RUN cd FirebirdCS-2.1.7.18553-0.amd64 && ./install.sh ${FIREBIRD_DB_PASSWORD_DEF
 RUN rm -r FirebirdCS-2.1.7.18553-0.amd64
 
 COPY firebird.conf ${FIREBIRD_PATH} 
-COPY fbudflib2.so ${FIREBIRD_PATH}/UDF
+#COPY fbudflib2.so ${FIREBIRD_PATH}/UDF
 COPY build.sh ${FIREBIRD_PATH}
 
 RUN cd ${FIREBIRD_PATH} && mkdir DBA && chown firebird:firebird DBA && chmod -R 770 DBA
