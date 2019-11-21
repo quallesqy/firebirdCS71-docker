@@ -30,6 +30,8 @@ RUN cd / && mkdir dba && chown firebird:firebird dba && chmod -R 770 dba
 
 COPY firebird.conf ${FIREBIRD_PATH} 
 COPY security2.fdb ${FIREBIRD_PATH}
+RUN cd ${FIREBIRD_PATH} && chown firebird:firebird firebird.conf && chmod -R 777 firebird.conf
+RUN cd ${FIREBIRD_PATH} && chown firebird:firebird security2.fdb && chmod -R 777 security2.fdb
 
 EXPOSE 3050/tcp
 EXPOSE 3051/tcp
