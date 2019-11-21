@@ -16,14 +16,14 @@ RUN rm FirebirdCS-2.1.7.18553-0.amd64.tar.gz
 RUN rm FirebirdCS-2.1.7.18553-0.amd64/install.sh
 RUN rm FirebirdCS-2.1.7.18553-0.amd64/scripts/postinstall.sh
 
-COPY install.sh FirebirdCS-2.1.7.18553-0.amd64
-COPY postinstall.sh FirebirdCS-2.1.7.18553-0.amd64/scripts
+#COPY install.sh FirebirdCS-2.1.7.18553-0.amd64
+#COPY postinstall.sh FirebirdCS-2.1.7.18553-0.amd64/scripts
 
 RUN cd FirebirdCS-2.1.7.18553-0.amd64 && ./install.sh ${FIREBIRD_DB_PASSWORD_DEFAULT}
 RUN rm -r FirebirdCS-2.1.7.18553-0.amd64
 
 COPY firebird.conf ${FIREBIRD_PATH} 
-COPY fbudflib2.so ${FIREBIRD_PATH}/UDF
+#COPY fbudflib2.so ${FIREBIRD_PATH}/UDF
 COPY build.sh ${FIREBIRD_PATH}
 
 RUN cd ${FIREBIRD_PATH} && mkdir DBA && chown firebird:firebird DBA && chmod -R 770 DBA
