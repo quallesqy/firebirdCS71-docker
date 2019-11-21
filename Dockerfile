@@ -9,6 +9,7 @@ RUN apt-get update
 RUN apt-get install wget -y
 RUN apt-get install libstdc++5 -y
 RUN apt-get install xinetd -y
+RUN apt-get install vim -y
 RUN wget http://sourceforge.net/projects/firebird/files/firebird-linux-amd64/2.1.7-Release/FirebirdCS-2.1.7.18553-0.amd64.tar.gz
 RUN tar -vzxf FirebirdCS-2.1.7.18553-0.amd64.tar.gz
 RUN rm FirebirdCS-2.1.7.18553-0.amd64.tar.gz
