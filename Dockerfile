@@ -1,5 +1,5 @@
 FROM ubuntu
-MAINTAINER Matheus Castiglioni <matheushcastiglioni@gmail.com>
+MAINTAINER Rishandi <shandy@semuada.com>
 
 ENV FIREBIRD_PATH=/opt/firebird
 ENV FIREBIRD_DB_PASSWORD=masterkey
@@ -21,6 +21,7 @@ COPY postinstall.sh FirebirdCS-2.1.7.18553-0.amd64/scripts
 RUN cd FirebirdCS-2.1.7.18553-0.amd64 && ./install.sh ${FIREBIRD_DB_PASSWORD_DEFAULT}
 RUN rm -r FirebirdCS-2.1.7.18553-0.amd64
 
+COPY firebird.conf ${FIREBIRD_PATH} 
 COPY fbudflib2.so ${FIREBIRD_PATH}/UDF
 COPY build.sh ${FIREBIRD_PATH}
 
